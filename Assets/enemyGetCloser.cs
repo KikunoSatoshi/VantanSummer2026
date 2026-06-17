@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 
-[AddComponentMenu("Playground/Gameplay/Object Creator Area")]
+[RequireComponent(typeof(BoxCollider2D))]
 public class enemyGetCloser : MonoBehaviour
 {
     [Header("Object creation")]
