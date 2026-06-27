@@ -376,7 +376,7 @@ MonoBehaviour:
     spawnStartTime: 0
   - prefab: {fileID: 4231129968452490506, guid: 56864daf9efc6e444bdbe06b4fed033f, type: 3}
     weight: 30
-    spawnStartTime: 10
+    spawnStartTime: 5
   spawnInterval: 0.5
 --- !u!4 &1241313008
 Transform:
@@ -437,7 +437,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &1611804926
 GameObject:

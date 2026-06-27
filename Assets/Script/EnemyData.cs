@@ -15,5 +15,5 @@ public class EnemyData
     ///<summary>出現開始時間</summary>
     public float spawnStartTime;
     ///<summary></summary>
-    EnemyColor color;
+    public EnemyColor color;
 }

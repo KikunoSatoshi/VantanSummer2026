@@ -55,10 +55,15 @@ public class EnemySpawner : MonoBehaviour
 
             int randomIndex = Random.Range(0, spawnableEnemies.Count);
            
-            // オブジェクトを生成し、計算した座標に移動する
+            // 敵を生成し、計算した座標に移動する
             GameObject newObject = Instantiate(spawnableEnemies[randomIndex].prefab);
             newObject.transform.position
                 = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
+
+            //Enemyから色を取得
+            Enemy enemyConponent = newObject.GetComponent<Enemy>();
+
+            enemyConponent.color = spawnableEnemies[randomIndex].color;
 
             // 処理をループさせる前に待つ
             yield return new WaitForSeconds(spawnInterval);
