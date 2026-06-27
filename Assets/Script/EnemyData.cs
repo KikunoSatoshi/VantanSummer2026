@@ -1,5 +1,10 @@
 using UnityEngine;
 
+public enum EnemyColor
+{
+    Red, Bule, Green
+}
+
 [System.Serializable]
 public class EnemyData
 {
@@ -8,5 +13,7 @@ public class EnemyData
     ///<summary>出現確率</summary>
     public int weight;
     ///<summary>出現開始時間</summary>
-    public float spawnStartTime;      
+    public float spawnStartTime;
+    ///<summary></summary>
+    EnemyColor color;
 }
