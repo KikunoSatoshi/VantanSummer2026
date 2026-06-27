@@ -31,21 +31,35 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            // Create some random numbers
             // 範囲内でランダムな座標を求める
             float randomX = Random.Range(-boxCollider2D.size.x, boxCollider2D.size.x) * .5f;
             float randomY = Random.Range(-boxCollider2D.size.y, boxCollider2D.size.y) * .5f;
 
-            // ランダムな敵を選ぶ
-            int randomIndex = Random.Range(0, enemyList.Count);
+            // 現在出現できる敵だけを入れるリスト
+            List<EnemyData> spawnableEnemies = new List<EnemyData>();
 
-            // Generate the new object
+            foreach (EnemyData enemy in enemyList)
+            {
+                if (Time.time >= enemy.spawnStartTime)
+                {
+                    spawnableEnemies.Add(enemy);
+                }
+            }
+
+            // 出現可能な敵をランダムに選ぶ
+            if (spawnableEnemies.Count == 0)
+            {
+                yield return new WaitForSeconds(spawnInterval);
+                continue;
+            }
+
+            int randomIndex = Random.Range(0, spawnableEnemies.Count);
+           
             // オブジェクトを生成し、計算した座標に移動する
-            GameObject newObject = Instantiate(enemyList[randomIndex].prefab);
+            GameObject newObject = Instantiate(spawnableEnemies[randomIndex].prefab);
             newObject.transform.position
                 = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
 
-            // Wait for some time before spawning another object
             // 処理をループさせる前に待つ
             yield return new WaitForSeconds(spawnInterval);
         }

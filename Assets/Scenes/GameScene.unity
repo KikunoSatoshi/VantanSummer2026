@@ -370,7 +370,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a25ef490a1218c4bbdf88f5f4c0180b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemyGetCloser
-  enemyList: []
+  enemyList:
+  - prefab: {fileID: 7249217019122595951, guid: f47bb2d8c314fa9479030adaa35de141, type: 3}
+    weight: 70
+    spawnStartTime: 0
+  - prefab: {fileID: 4231129968452490506, guid: 56864daf9efc6e444bdbe06b4fed033f, type: 3}
+    weight: 30
+    spawnStartTime: 10
   spawnInterval: 0.5
 --- !u!4 &1241313008
 Transform:

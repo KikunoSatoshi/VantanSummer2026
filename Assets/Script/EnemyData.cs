@@ -3,7 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public class EnemyData
 {
-    public GameObject prefab;    // 敵のプレハブ
-    public int weight;           // 出現確率
-    public float startTime;      // 出現開始時間
+    ///<summary>敵のプレハブ</summary>
+    public GameObject prefab;
+    ///<summary>出現確率</summary>
+    public int weight;
+    ///<summary>出現開始時間</summary>
+    public float spawnStartTime;      
 }
