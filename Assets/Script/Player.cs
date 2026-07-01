@@ -12,13 +12,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         //if (Input.GetKeyDown(KeyCode.W))
         //{
            
         //}
         if (Keyboard.current.aKey.wasPressedThisFrame)
         {
-            DestroyObjectsWithTag("Red");
+            enemy.TakeDamage(EnemyColor.Red);
         }
 
         if (Keyboard.current.sKey.wasPressedThisFrame)
