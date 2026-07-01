@@ -12,14 +12,17 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
         //if (Input.GetKeyDown(KeyCode.W))
         //{
            
         //}
         if (Keyboard.current.aKey.wasPressedThisFrame)
         {
-            enemy.TakeDamage(EnemyColor.Red);
+            Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+            foreach (Enemy enemy in enemies)
+            {
+                enemy.TakeDamage(EnemyColor.Red);
+            }
         }
 
         if (Keyboard.current.sKey.wasPressedThisFrame)

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum EnemyColor
 {
-    Red, Blue, Green
+    Red, Blue, Yellow
 }
 
 [System.Serializable]
