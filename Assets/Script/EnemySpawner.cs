@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("ループ開始");
             // 範囲内でランダムな座標を求める
             float randomX = Random.Range(-boxCollider2D.size.x, boxCollider2D.size.x) * .5f;
             float randomY = Random.Range(-boxCollider2D.size.y, boxCollider2D.size.y) * .5f;
@@ -57,8 +58,8 @@ public class EnemySpawner : MonoBehaviour
            
             // 敵を生成し、計算した座標に移動する
             GameObject newObject = Instantiate(spawnableEnemies[randomIndex].prefab);
-            newObject.transform.position
-                = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
+            Debug.Log("敵を生成しました");
+            newObject.transform.position = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
 
             //Enemyから色を取得
             Enemy enemyConponent = newObject.GetComponent<Enemy>();

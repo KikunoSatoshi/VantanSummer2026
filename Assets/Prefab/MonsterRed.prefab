@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2835147065258337400}
   - component: {fileID: 6570461651703450168}
   - component: {fileID: 2060735000847155551}
+  - component: {fileID: 3501720131808822983}
   m_Layer: 0
   m_Name: MonsterRed
-  m_TagString: Red
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,3 +154,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &3501720131808822983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7249217019122595951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10810bce88d0519408e392618cb1482e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  color: 0
+  hp: 10
