@@ -7,9 +7,11 @@ using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Object creation")]
-
+    //出現する敵のリスト
     public List<EnemyData> enemyList = new List<EnemyData>();
-    
+    //生きている敵のリスト
+    public List<Enemy> aliveEnemies = new List<Enemy>();
+
     [Header("Other options")]
 
     public float spawnInterval = 1.0f;
@@ -62,9 +64,9 @@ public class EnemySpawner : MonoBehaviour
             newObject.transform.position = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
 
             //Enemyから色を取得
-            Enemy enemyConponent = newObject.GetComponent<Enemy>();
-
-            enemyConponent.color = spawnableEnemies[randomIndex].color;
+            Enemy enemyComponent = newObject.GetComponent<Enemy>();
+            aliveEnemies.Add(enemyComponent);
+            enemyComponent.color = spawnableEnemies[randomIndex].color;
 
             // 処理をループさせる前に待つ
             yield return new WaitForSeconds(spawnInterval);
