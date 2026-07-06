@@ -72,4 +72,14 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
+
+    public Enemy GetFrontEnemy()
+    {
+        Enemy frontEnemy = null;
+
+        foreach(Enemy enemy in aliveEnemies)
+        {
+
+        }
+    }
 }
