@@ -3,48 +3,38 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private EnemySpawner spawner;
+
     void Start()
     {
-        
+        spawner = FindFirstObjectByType<EnemySpawner>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.W))
-        //{
-           
-        //}
         if (Keyboard.current.aKey.wasPressedThisFrame)
         {
-            Enemy[] enemies = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
-            foreach (Enemy enemy in enemies)
-            {
-                enemy.TakeDamage(EnemyColor.Red);
-            }
+            Attack(EnemyColor.Red);
         }
 
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
-            DestroyObjectsWithTag("Bule");
+            Attack(EnemyColor.Blue);
         }
 
         if (Keyboard.current.dKey.wasPressedThisFrame)
         {
-            DestroyObjectsWithTag("Yellow");
+            Attack(EnemyColor.Yellow);
         }
     }
 
-    void DestroyObjectsWithTag(string tagName)
+    void Attack(EnemyColor attackColor)
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag(tagName);
+        Enemy enemy = spawner.GetFrontEnemy();
 
-        //Debug.Log(tagName + " : " + objects.Length);
-
-        foreach (GameObject obj in objects)
+        if (enemy != null)
         {
-            Destroy(obj);
+            enemy.TakeDamage(attackColor);
         }
     }
 }

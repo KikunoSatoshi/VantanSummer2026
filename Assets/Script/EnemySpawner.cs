@@ -75,11 +75,21 @@ public class EnemySpawner : MonoBehaviour
 
     public Enemy GetFrontEnemy()
     {
-        Enemy frontEnemy = null;
-
-        foreach(Enemy enemy in aliveEnemies)
+        if (aliveEnemies.Count == 0)
         {
-
+            return null;
         }
+
+        Enemy frontEnemy = aliveEnemies[0];
+
+        foreach (Enemy enemy in aliveEnemies)
+        {
+            if (enemy.transform.localScale.x > frontEnemy.transform.localScale.x)
+            {
+                frontEnemy = enemy;
+            }
+        }
+
+        return frontEnemy;
     }
 }
