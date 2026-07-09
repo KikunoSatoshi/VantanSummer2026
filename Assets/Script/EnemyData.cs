@@ -16,4 +16,6 @@ public class EnemyData
     public float spawnStartTime;
     ///<summary></summary>
     public EnemyColor color;
+    ///<summary>速度</summary>
+    public float growSpeed = 1f;
 }

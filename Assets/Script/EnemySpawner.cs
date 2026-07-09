@@ -68,6 +68,14 @@ public class EnemySpawner : MonoBehaviour
             aliveEnemies.Add(enemyComponent);
             enemyComponent.color = spawnableEnemies[randomIndex].color;
 
+            //Enemyからcloserへ速度渡し
+            closer closerComponent = newObject.GetComponent<closer>();
+
+            if (closerComponent != null)
+            {
+                closerComponent.growSpeed = spawnableEnemies[randomIndex].growSpeed;
+            }
+
             // 処理をループさせる前に待つ
             yield return new WaitForSeconds(spawnInterval);
         }

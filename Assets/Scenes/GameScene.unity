@@ -375,10 +375,13 @@ MonoBehaviour:
     weight: 70
     spawnStartTime: 0
     color: 0
+    growSpeed: 1
   - prefab: {fileID: 4231129968452490506, guid: 56864daf9efc6e444bdbe06b4fed033f, type: 3}
     weight: 30
     spawnStartTime: 5
     color: 2
+    growSpeed: 1
+  aliveEnemies: []
   spawnInterval: 0.5
 --- !u!4 &1241313008
 Transform:
