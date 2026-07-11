@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 666950728}
   - component: {fileID: 666950727}
   - component: {fileID: 666950726}
+  - component: {fileID: 666950729}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -252,6 +253,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666950724}
   m_CullTransparentMesh: 1
+--- !u!114 &666950729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666950724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829c9c05f8dfbac41bba1685f3a62fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonBlink
+--- !u!1 &681012208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681012211}
+  - component: {fileID: 681012210}
+  - component: {fileID: 681012209}
+  m_Layer: 5
+  m_Name: FadeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &681012209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681012208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &681012210
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681012208}
+  m_CullTransparentMesh: 1
+--- !u!224 &681012211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681012208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139837011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 460, y: 68}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &872967050
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,12 +445,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 885126840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3d55cf01d4ae740a933cb653feba7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0892faea8755e438fa706589eb27e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeByCoroutine
-  _fadeImage: {fileID: 0}
+  _fadeImage: {fileID: 681012209}
   _fadeTime: 1
-  _timer: 0
 --- !u!4 &885126842
 Transform:
   m_ObjectHideFlags: 0
@@ -462,9 +549,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1029140098}
-        m_TargetAssemblyTypeName: ButtonBlink, Assembly-CSharp
-        m_MethodName: Blink
+      - m_Target: {fileID: 1776162337}
+        m_TargetAssemblyTypeName: TitleManager, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -927,6 +1014,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c3534e0c9b8e9468b643c6e7f24d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleManager
+  startButtonBlink: {fileID: 1029140098}
+  exitButtonBlink: {fileID: 666950729}
+  fade: {fileID: 885126841}
 --- !u!4 &1776162338
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,6 +1130,7 @@ RectTransform:
   - {fileID: 1211280747}
   - {fileID: 1029140094}
   - {fileID: 666950725}
+  - {fileID: 681012211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
