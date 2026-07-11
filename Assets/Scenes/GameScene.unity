@@ -380,7 +380,7 @@ MonoBehaviour:
     weight: 30
     spawnStartTime: 5
     color: 2
-    growSpeed: 1
+    growSpeed: 2
   aliveEnemies: []
   spawnInterval: 0.5
 --- !u!4 &1241313008
