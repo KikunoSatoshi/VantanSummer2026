@@ -17,6 +17,9 @@ public class EnemySpawner : MonoBehaviour
     public float spawnInterval = 1.0f;
     private BoxCollider2D boxCollider2D;
     private Coroutine spawnCoroutine;
+
+    public float startDelay = 3f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
@@ -31,6 +34,9 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator SpawnObject()
     {
+        // ゲーム開始までstartDelay秒待つ
+        yield return new WaitForSeconds(startDelay);
+
         while (true)
         {
             Debug.Log("ループ開始");

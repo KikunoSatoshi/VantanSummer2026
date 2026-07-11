@@ -383,6 +383,7 @@ MonoBehaviour:
     growSpeed: 2
   aliveEnemies: []
   spawnInterval: 0.5
+  startDelay: 3
 --- !u!4 &1241313008
 Transform:
   m_ObjectHideFlags: 0
@@ -454,6 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611804928}
   - component: {fileID: 1611804927}
+  - component: {fileID: 1611804929}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -488,6 +490,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611804929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611804926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a25cceb75098b141b299023b7636584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHp: 3
+  invincibleTime: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
