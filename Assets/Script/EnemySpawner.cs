@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+//RequireComponentを付けることで、必要なコンポーネントが必ず付くようにし、実行時エラーを防いでいる。
 [RequireComponent(typeof(BoxCollider2D))]
 public class EnemySpawner : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Other options")]
 
     public float spawnInterval = 1.0f;
+    //BoxCollider2Dを使って敵の出現範囲を決めている。
     private BoxCollider2D boxCollider2D;
     private Coroutine spawnCoroutine;
 
@@ -62,28 +63,52 @@ public class EnemySpawner : MonoBehaviour
                 continue;
             }
 
-            int randomIndex = Random.Range(0, spawnableEnemies.Count);
-           
-            // 敵を生成し、計算した座標に移動する
-            GameObject newObject = Instantiate(spawnableEnemies[randomIndex].prefab);
-            Debug.Log("敵を生成しました");
-            newObject.transform.position = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
+            // weightの合計を求める
+            int totalWeight = 0;
 
-            //Enemyから色を取得
-            Enemy enemyComponent = newObject.GetComponent<Enemy>();
-            aliveEnemies.Add(enemyComponent);
-            enemyComponent.color = spawnableEnemies[randomIndex].color;
-
-            //Enemyからcloserへ速度渡し
-            closer closerComponent = newObject.GetComponent<closer>();
-
-            if (closerComponent != null)
+            foreach (EnemyData enemy in spawnableEnemies)
             {
-                closerComponent.growSpeed = spawnableEnemies[randomIndex].growSpeed;
+                totalWeight += enemy.weight;
             }
 
-            // 処理をループさせる前に待つ
-            yield return new WaitForSeconds(spawnInterval);
+            // 0～合計weight未満の乱数を作る
+            int randomValue = Random.Range(0, totalWeight);
+
+            // 出現する敵を決定
+            EnemyData selectedEnemy = null;
+
+            foreach (EnemyData enemy in spawnableEnemies)
+            {
+                randomValue -= enemy.weight;
+
+                if (randomValue < 0)
+                {
+                    selectedEnemy = enemy;
+                    break;
+                }
+            }
+                // 敵を生成し、計算した座標に移動する
+                GameObject newObject = Instantiate(selectedEnemy.prefab);
+                Debug.Log("敵を生成しました");
+                newObject.transform.position = new Vector2(randomX + this.transform.position.x + boxCollider2D.offset.x, randomY + this.transform.position.y + boxCollider2D.offset.y);
+
+
+                Enemy enemyComponent = newObject.GetComponent<Enemy>();
+                aliveEnemies.Add(enemyComponent);
+                //Enemyから色,スコアを取得
+                enemyComponent.color = selectedEnemy.color;
+                enemyComponent.score = selectedEnemy.score;
+
+                //Enemyからcloserへ速度渡し
+                closer closerComponent = newObject.GetComponent<closer>();
+
+                if (closerComponent != null)
+                {
+                    closerComponent.growSpeed = selectedEnemy.growSpeed;
+                }
+
+                // 処理をループさせる前に待つ
+                yield return new WaitForSeconds(spawnInterval);
         }
     }
 

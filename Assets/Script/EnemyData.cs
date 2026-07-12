@@ -18,4 +18,6 @@ public class EnemyData
     public EnemyColor color;
     ///<summary>速度</summary>
     public float growSpeed = 1f;
+    ///<summary>倒したときのスコア</summary>
+    public int score = 100;
 }
