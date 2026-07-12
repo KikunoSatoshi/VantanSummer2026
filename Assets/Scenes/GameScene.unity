@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 124083351}
   - component: {fileID: 124083353}
   - component: {fileID: 124083352}
+  - component: {fileID: 124083354}
   m_Layer: 5
   m_Name: HPText
   m_TagString: Untagged
@@ -256,6 +257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124083350}
   m_CullTransparentMesh: 1
+--- !u!114 &124083354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124083350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1604d0e4f93d69a4e8207a1a08df03aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpText
+  hpText: {fileID: 124083352}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
