@@ -4,7 +4,7 @@ public enum EnemyColor
 {
     Red, Blue, Yellow
 }
-
+// Inspectorに表示できるクラス
 [System.Serializable]
 public class EnemyData
 {
@@ -14,9 +14,9 @@ public class EnemyData
     public int weight;
     ///<summary>出現開始時間</summary>
     public float spawnStartTime;
-    ///<summary></summary>
+    ///<summary>色の分類enumでRed,Blue,Yellow</summary>
     public EnemyColor color;
-    ///<summary>速度</summary>
+    ///<summary>拡大速度</summary>
     public float growSpeed = 1f;
     ///<summary>倒したときのスコア</summary>
     public int score = 100;

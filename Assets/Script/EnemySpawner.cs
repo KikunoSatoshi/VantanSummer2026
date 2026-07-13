@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections; //コルーチン使うのに必要
 using System.Collections.Generic;
 //RequireComponentを付けることで、必要なコンポーネントが必ず付くようにし、実行時エラーを防いでいる。
 [RequireComponent(typeof(BoxCollider2D))]
