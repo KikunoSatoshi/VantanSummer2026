@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +49,8 @@ public class EnemySpawner : MonoBehaviour
 
             foreach (EnemyData enemy in enemyList)
             {
-                if (Time.time >= enemy.spawnStartTime)
+                //  Sceneが読み込まれてからの時間 >=
+                if (Time.timeSinceLevelLoad >= enemy.spawnStartTime)
                 {
                     spawnableEnemies.Add(enemy);
                 }
