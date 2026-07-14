@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 357, y: -178}
+  m_AnchoredPosition: {x: 370, y: -178}
   m_SizeDelta: {x: 200, y: 41.0122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &553335424
@@ -1134,8 +1134,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -135}
-  m_SizeDelta: {x: 290, y: 44.9798}
+  m_AnchoredPosition: {x: 303.5, y: -135}
+  m_SizeDelta: {x: 333, y: 44.9798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &985015732
 MonoBehaviour:
@@ -1170,7 +1170,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5BFE\u5FDC\u3057\u305F\u8272\u3067\u653B\u6483\u3057\u3088\u3046\n\u9055\u3046\u8272\u3067\u3082\u4E09\u56DE\u653B\u6483\u3057\u305F\u3089\u7834\u58CA\u3067\u304D\u307E\u3059"
+  m_Text: "\u5BFE\u5FDC\u3057\u305F\u8272\u3067\u653B\u6483\u3057\u3088\u3046\n\u9055\u3046\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3089\u5C11\u3057\u306E\u9593\u653B\u6483\u3067\u304D\u307E\u305B\u3093\uFF01"
 --- !u!222 &985015733
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1538,6 +1538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6df1d9825f029429868fca32f66a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  attackColor: 0
+  penaltyTime: 1
 --- !u!4 &1611804928
 Transform:
   m_ObjectHideFlags: 0
