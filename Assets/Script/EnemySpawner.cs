@@ -25,6 +25,8 @@ public class EnemySpawner : MonoBehaviour
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
         spawnCoroutine = StartCoroutine(SpawnObject());
+
+        StartCoroutine(SpawnSpeedUp());
     }
 
     // Update is called once per frame
@@ -130,5 +132,18 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return frontEnemy;
+    }
+
+
+    IEnumerator SpawnSpeedUp()
+    {
+        while (spawnInterval > 0.5f)
+        {
+            yield return new WaitForSeconds(15f);
+
+            spawnInterval = Mathf.Max(0.5f, spawnInterval - 0.1f);
+
+            Debug.Log($"スポーン間隔：{spawnInterval}秒");
+        }
     }
 }
