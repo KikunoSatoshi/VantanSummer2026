@@ -1539,7 +1539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   attackColor: 0
-  penaltyTime: 1
+  penaltyTime: 0.5
 --- !u!4 &1611804928
 Transform:
   m_ObjectHideFlags: 0

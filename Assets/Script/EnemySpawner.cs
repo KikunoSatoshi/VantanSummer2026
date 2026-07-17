@@ -141,7 +141,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(15f);
 
-            spawnInterval = Mathf.Max(0.5f, spawnInterval - 0.1f);
+            spawnInterval = Mathf.Max(0.5f, spawnInterval - 0.1f);//0.5f未満にならないようにする
 
             Debug.Log($"スポーン間隔：{spawnInterval}秒");
         }
